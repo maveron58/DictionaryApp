@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(version: 20130527103415) do
 
   create_table "languages", force: true do |t|
-    t.string "name"
+    t.string "name", null: false
   end
 
   create_table "words", force: true do |t|
-    t.string  "word"
-    t.string  "definition"
-    t.integer "from_id"
-    t.integer "to_id"
+    t.string  "word",       null: false
+    t.text    "definition", null: false
+    t.integer "from_id",    null: false
+    t.integer "to_id",      null: false
   end
 
   add_index "words", ["from_id"], name: "words_from_id_fk", using: :btree
