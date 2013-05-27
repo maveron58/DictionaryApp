@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: words
+#
+#  id         :integer          not null, primary key
+#  word       :string(255)
+#  definition :string(255)
+#  from_id    :integer
+#  to_id      :integer
+#
+
 require 'spec_helper'
 
 describe Word do
@@ -41,12 +52,12 @@ describe Word do
     it { should_not be_valid }
   end
 
-  describe "when from_id is not present" do
+  describe "when from is not present" do
     before { @word.from = nil }
     it { should_not be_valid }
   end
 
-  describe "when to_id is not present" do
+  describe "when to is not present" do
     before { @word.to = nil }
     it { should_not be_valid }
   end
