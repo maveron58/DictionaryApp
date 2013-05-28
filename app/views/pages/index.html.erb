@@ -1,2 +1,14 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="header">
+  <div class="inside">
+    <h1>Online Dictionary</h1>
+    <%= form_tag(:controller => 'search', :action => 'index', :method => "get", :html => { :class => 'header' }) do %>
+      <%= select_tag(:from, options_from_collection_for_select(Language.all, :id, :name)) %>
+      <%= select_tag(:to, options_from_collection_for_select(Language.all, :id, :name)) %>
+      <%= text_field_tag(:word) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+<div class="content">
+  <%= yield %>
+</div>
