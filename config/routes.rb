@@ -2,7 +2,7 @@ DictApp::Application.routes.draw do
   scope "(:locale)" do
     root :to => "pages#index"
     get "search" => "search#index"
-    post "search/list/:word" => "search#list"
+    post "search/list" => "search#list"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
