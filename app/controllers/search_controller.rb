@@ -6,4 +6,7 @@ class SearchController < ApplicationController
 
     @wynik = Word.where("from_id = :f AND to_id = :t AND word = :w", {:f => params[:from], :t => params[:to], :w => params[:word] }).first()
   end
+
+  def list
+  end
 end
