@@ -1,0 +1,6 @@
+<%= form_tag({ :controller => 'search', :action => 'index' }, :method => "get", :class => 'header') do %>
+  <%= select_tag(:from, options_from_collection_for_select(Language.all, :id, :name)) %>
+  <%= select_tag(:to, options_from_collection_for_select(Language.all, :id, :name)) %>
+  <%= text_field_tag(:word) %>
+  <%= submit_tag(t("search")) %>
+<% end %>
