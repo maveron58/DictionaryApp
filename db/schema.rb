@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130527103415) do
 
   add_index "words", ["from_id"], name: "words_from_id_fk", using: :btree
   add_index "words", ["to_id"], name: "words_to_id_fk", using: :btree
+  add_index "words", ["word"], name: "index_words_on_word", using: :btree
 
   add_foreign_key "words", "languages", :name => "words_from_id_fk", :column => "from_id"
   add_foreign_key "words", "languages", :name => "words_to_id_fk", :column => "to_id"

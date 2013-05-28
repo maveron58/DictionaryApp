@@ -6,5 +6,7 @@ class CreateWords < ActiveRecord::Migration
       t.integer :from_id, :null => false
       t.integer :to_id, :null => false
     end
+
+    add_index :words, :word
   end
 end
