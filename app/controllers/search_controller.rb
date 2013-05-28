@@ -4,6 +4,6 @@ class SearchController < ApplicationController
     @arg2 = params[:to]
     @arg3 = params[:word]
 
-    @wynik = Word.find(:first, :conditions => [ "from_id = :f AND to_id = :t AND word = :w", {:f => params[:from], :t => params[:to], :w => params[:word]}])
+    @wynik = Word.where("from_id = :f AND to_id = :t AND word = :w", {:f => params[:from], :t => params[:to], :w => params[:word] }).first()
   end
 end
