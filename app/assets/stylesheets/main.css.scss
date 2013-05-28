@@ -45,6 +45,29 @@ div.header {
       padding: 0px;
       margin-right: 20px;
     }
+
+    form {
+      height: $headerHeight;
+      float: left;
+    }
+
+    ul {
+      float: left;
+      height: $headerHeight;
+      display: block;
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    } 
+
+    li {
+      float: left;
+      height: $headerHeight;
+    }
+
+    a {
+      color: white;
+    }
   }
 }
 
