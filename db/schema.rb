@@ -14,7 +14,9 @@
 ActiveRecord::Schema.define(version: 20130527103415) do
 
   create_table "languages", force: true do |t|
-    t.string "name", null: false
+    t.string  "name",                 null: false
+    t.boolean "from", default: false, null: false
+    t.boolean "to",   default: false, null: false
   end
 
   create_table "words", force: true do |t|

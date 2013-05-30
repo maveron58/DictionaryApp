@@ -1,5 +1,10 @@
+<%= image_tag "list-arrow.png", :class => 'arrow' %>
 <ul>
-<% for word in @result do %>
-  <li><%= word.word %></li>
+<%if not @result.empty? %>
+  <% for word in @result do %>
+    <li><%= word.word %></li>
+  <% end %>
+<% else %>
+  <%= t("no_result") %>
 <% end %>
 </ul>

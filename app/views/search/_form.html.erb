@@ -1,14 +1,23 @@
-<%= form_tag({ :controller => 'search', :action => 'index' }, :method => "get", :class => 'header') do %>
+<%= form_tag({ :controller => 'search', :action => 'index' }, :method => "get", :class => 'word-input') do %>
+  <div class="select"></div>
+  <div class="prompt select-prompt" id="from-select">
+  </div>
+  <%= image_tag "lang-arrow.png", :class => 'lang-arrow' %>
+  <div class="select"></div>
+  <div class="prompt select-prompt" id="to-select">
+  </div>
   <% if params[:from] %>
-    <%= select_tag(:from, options_from_collection_for_select(Language.all, :id, :name, params[:from])) %>
+    <%= select_tag(:from, options_from_collection_for_select(Language.where(:from => true), :id, :name, params[:from])) %>
   <% else %>
-    <%= select_tag(:from, options_from_collection_for_select(Language.all, :id, :name)) %>
+    <%= select_tag(:from, options_from_collection_for_select(Language.where(:from => true), :id, :name)) %>
   <% end %>
   <% if params[:to] %>
-    <%= select_tag(:to, options_from_collection_for_select(Language.all, :id, :name, params[:to])) %>
+    <%= select_tag(:to, options_from_collection_for_select(Language.where(:to => true), :id, :name, params[:to])) %>
   <% else %>
-    <%= select_tag(:to, options_from_collection_for_select(Language.all, :id, :name)) %>
+    <%= select_tag(:to, options_from_collection_for_select(Language.where(:to => true), :id, :name)) %>
   <% end %>
-  <%= text_field_tag(:word) %>
-  <%= submit_tag(t("search")) %>
+  <%= text_field_tag(:word, nil, :autocomplete => 'off') %>
+  <a class="submit"><%= t("search") %></a>
+  <div class="prompt">
+  </div>
 <% end %>

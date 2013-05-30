@@ -1,8 +1,36 @@
 $lines: #2c3e50;
 $bg: #ffffff;
-$headerHeight: 60px;
+$buttons: #1abc9c;
+$buttonsHover: #48c9b0;
+$headerHeight: 65px;
+$wordInputWidth: 200px;
+$selectWidth: 40px;
 
 @import url(http:/fonts.googleapis.com/css?family=Lato:400,700,400italic);
+
+@keyframes buttonIn
+{
+0%   { background: $buttons; }
+100% { background: $buttonsHover; }
+}
+
+@-webkit-keyframes buttonIn
+{
+0%   { background: $buttons; }
+100% { background: $buttonsHover; }
+}
+
+@keyframes buttonOut
+{
+0%   { background: $buttonsHover; }
+100% { background: $buttons; }
+}
+
+@-webkit-keyframes buttonOut
+{
+0%   { background: $buttonsHover; }
+100% { background: $buttons; }
+}
 
 body {
   background: $bg;
@@ -19,6 +47,7 @@ body {
 }
 
 div.header {
+  z-index: 100;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -39,30 +68,12 @@ div.header {
       display: block;
       height: $headerHeight;
       line-height: $headerHeight;
+      width: 400px;
       font-size: 30px;
       font-weight: bold;
       margin: 0px;
       padding: 0px;
       margin-right: 20px;
-    }
-
-    form {
-      height: $headerHeight;
-      float: left;
-    }
-
-    ul {
-      float: left;
-      height: $headerHeight;
-      display: block;
-      margin: 0px;
-      padding: 0px;
-      list-style: none;
-    } 
-
-    li {
-      float: left;
-      height: $headerHeight;
     }
 
     a {
@@ -71,13 +82,168 @@ div.header {
   }
 }
 
+form.word-input {
+  height: $headerHeight - 30px;
+  width: 490px;
+  float: left;
+  padding: 15px 0px;
+  margin: 0px;
+  position: relative;
+
+  select {
+    display: none;
+  }
+
+  div.select {
+    width: $selectWidth;
+    height: 20px;
+    padding: 5px;
+    margin: 0px 10px 0px 0px;
+    float: left;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: white;
+  }
+
+  input[type=text] {
+    display: block;
+    float: left;
+    width: $wordInputWidth;
+    height: 20px;
+    padding: 5px;
+    margin: 0px 10px 0px 0px;
+    border: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: white;
+  }
+
+  a.submit {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: $buttons;
+    animation: buttonOut 0.5s;
+    -webkit-animation: buttonOut 0.5s;
+    cursor: pointer;
+    &:hover {
+      animation: buttonIn 0.5s;
+      -webkit-animation: buttonIn 0.5s;
+      background: $buttonsHover;
+    }
+  }
+
+  img.lang-arrow {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 18px;
+    padding: 6px 0px;
+    margin: 0px 5px 0px -5px;
+  }
+}
+
+ul.change-locale {
+  float: left;
+  height: $headerHeight;
+  width: 90px;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+
+  li {
+    display: block;
+    line-height: $headerHeight - 20px;
+    height: $headerHeight - 20px;
+    width: 30px;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0px;
+    float: right;
+  }
+}
+
+div.prompt {
+  z-index: 300;
+  display: none;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  top: 45px;
+  left: 160px;
+  background: transparent;
+  width: $wordInputWidth + 10px;
+
+  img.arrow {
+    margin: 0px 0px -3px 170px;
+    padding: 0px;
+    display: block;
+  }
+
+  ul {
+    width: $wordInputWidth - 6px;
+    list-style: none;
+    background: white;
+    border: 3px $buttons solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0px;
+    padding: 5px;
+
+    li {
+      width: $wordInputWidth - 6px;
+      height: 20px;
+      line-height: 20px;
+      display: block;
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+    }
+  }
+}
+
+div.select-prompt {
+  width: $selectWidth + 10px;
+
+  ul {
+    width: $selectWidth - 6px;
+
+    li {
+      width: $selectWidth - 6px;
+    }
+  }
+}
+
+div.select#from-select {
+  left: 0px;
+}
+
+div.select#to-select {
+  left: 100px;
+}
+
 div.content {
+  z-index: 1;
   margin: 60px auto 60px auto;
   padding: 10px 0px 10px 0px;
   width: 1000px;
 }
 
 div.footer {
+  z-index: 100;
   position: fixed;
   bottom: 0px;
   left: 0px;
