@@ -10,22 +10,37 @@ $(document).ready(function() {
         data: { from: from, to: to, word: word },
         method: "POST",
         success: function(data) { 
-          $('div.prompt').html(data).css('display','block');
+          promptOpen($('div.prompt#word-input'), data);
         }
       });
     } else {
-      $('div.prompt').html('').css('display','none');
+      promptClose($('div.prompt#word-input'));
     }
   }
 
-  function promptClose() {
-    $('div.prompt').html('').css('display','none');
+  function promptOpen(obj, data = '') {
+    if(data.length > 0) {
+      obj.html(data);
+    }
+    obj.css('display','block');
+  }
+
+  function promptClose(obj) {
+    obj.css('display','none');
   }
 
   $('input#word').keyup(promptCreate);
-  $('input#word').blur(promptClose);
-  $('select#to').change(promptClose);
-  $('select#from').change(promptClose);
+  $('input#word').focus(function() { promptOpen($('div.prompt#word-input')) });
+  $('input#word').blur(function() { promptClose($('div.prompt#word-input')) });
+  $('select#to').change(function() { promptClose($('div.prompt#word-input')) });
+  $('select#from').change(function() { promptClose($('div.prompt#word-input')) });
+
+  $('.select-prompt a').click(function (e) {
+    e.preventDefault();
+    var par = $(this).closest('ul.select');
+    par.find('select').val($(this).attr('len-val'));
+    par.find('.title').text($(this).text());
+  });
 
   $('.submit').click(function (e) {
     e.preventDefault();

@@ -23,3 +23,4 @@ en:
   title: "Online Dictionary"
   search: "Search"
   no_result: "No results."
+  result_message: "You were looking for word '%{word}' in %{from}-%{to} dictionary."

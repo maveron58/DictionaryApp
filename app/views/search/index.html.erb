@@ -1,7 +1,11 @@
-<%= @arg1 + ' ' + @arg2 + ' ' + @arg3 %>
-<br />
-<% if @wynik.blank? %>
-  <%= t("no_result") %>
-<% else %>
-  <%= @wynik.definition %>
-<% end %>
+<h3>
+  <%= t("result_message", :word => @word, :from => @from.upcase, :to => @to.upcase) %>
+</h3>
+
+<p>
+  <% if @wynik.blank? %>
+    <%= t("no_result") %>
+  <% else %>
+    <%= @wynik.definition %>
+  <% end %>
+</p>

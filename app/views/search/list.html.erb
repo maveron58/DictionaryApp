@@ -2,9 +2,9 @@
 <ul>
 <%if not @result.empty? %>
   <% for word in @result do %>
-    <li><%= word.word %></li>
+    <li><a><%= word.word %></a></li>
   <% end %>
 <% else %>
-  <%= t("no_result") %>
+  <li><%= t("no_result") %></li>
 <% end %>
 </ul>
