@@ -7,7 +7,7 @@ $headerHeight: 65px;
 $wordInputWidth: 200px;
 $selectWidth: 40px;
 
-@import url(http:/fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 
 @keyframes buttonIn
 {
@@ -97,19 +97,14 @@ form.word-input {
 
   ul.select {
     display: block;
-    width: $selectWidth;
-    height: 20px;
-    padding: 5px;
+    width: $selectWidth + 10px;
+    padding: 0px;
     margin: 0px 10px 0px 0px;
     float: left;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    background: white;
 
     li {
       display: block;
-      width: $selectWidth;
+      width: $selectWidth + 10px;
       padding: 0px;
       margin: 0px;
       position: relative;
@@ -118,19 +113,23 @@ form.word-input {
         display: block;
         width: $selectWidth;
         height: 20px;
-        padding: 0px;
+        padding: 5px;
         margin: 0px;
         color: $textColor;
         line-height: 20px;
         text-align: center;
         cursor: pointer;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        background: white;
       }
 
       ul.select-prompt {
         display: block;
         position: absolute;
-        top: 32px;
-        left: -5px;
+        top: 37px;
+        left: 0px;
         width: $selectWidth + 10px - 6px;
         list-style: none;
         background: white;
@@ -149,7 +148,7 @@ form.word-input {
           display: block;
           position: absolute;
           top: -10px;
-          left: (($selectWidth + 10px - 6px) / 2)- 7px;
+          left: (($selectWidth + 10px - 6px) / 2) - 7px;
           width: 0px;
           height: 0px;
           border: {
