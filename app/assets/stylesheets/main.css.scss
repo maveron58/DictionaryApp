@@ -91,115 +91,30 @@ form.word-input {
   margin: 0px;
   position: relative;
 
-  select {
-    display: none;
-  }
-
-  ul.select {
-    display: block;
-    width: $selectWidth + 10px;
-    padding: 0px;
+  div.select {
+    width: $selectWidth;
+    overflow: hidden;
+    height: 20px;
+    padding: 5px;
     margin: 0px 10px 0px 0px;
     float: left;
+    border: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: white;
+    text-transform: uppercase;
 
-    li {
+    select {
       display: block;
-      width: $selectWidth + 10px;
+      float: left;
+      width: $selectWidth + 20px;
+      text-align: left;
+      border: 0px;
       padding: 0px;
       margin: 0px;
-      position: relative;
-
-      a {
-        display: block;
-        width: $selectWidth;
-        height: 20px;
-        padding: 5px;
-        margin: 0px;
-        color: $textColor;
-        line-height: 20px;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        background: white;
-      }
-
-      ul.select-prompt {
-        display: block;
-        position: absolute;
-        top: 37px;
-        left: 0px;
-        width: $selectWidth + 10px - 6px;
-        list-style: none;
-        background: white;
-        border: 3px $buttons solid;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        margin: 0px;
-        padding: 0px;
-        transition: all 0.2s linear 0.2s;
-        opacity: 0;
-        visibility: hidden;
-
-        &:before {
-          content: " ";
-          display: block;
-          position: absolute;
-          top: -10px;
-          left: (($selectWidth + 10px - 6px) / 2) - 7px;
-          width: 0px;
-          height: 0px;
-          border: {
-            top: 0px;
-            bottom: 7px $buttons solid;
-            left: 7px transparent solid;
-            right: 7px transparent solid;
-          }
-        }
-
-        li {
-          width: $selectWidth - 6px;
-          height: 20px;
-          line-height: 20px;
-          display: block;
-          margin: 0px;
-          padding: 0px 5px;
-          overflow: hidden;
-
-          &:first-child {
-            padding-top: 5px;
-          }
-
-          &:last-child {
-            padding-bottom: 5px;
-          }
-
-          a {
-            display: block;
-            width: $selectWidth - 6px;
-            height: 20px;
-            line-height: 20px;
-            display: block;
-            margin: 0px;
-            padding: 0px;
-            color: $textColor !important;
-            cursor: pointer;
-            background: transparent;
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      &:hover ul.select-prompt {
-        opacity: 1;
-        visibility: visible;
-      }
+      background: transparent;
+      color: $textColor;
     }
   }
 
@@ -251,39 +166,26 @@ form.word-input {
   }
 }
 
-ul.change-locale {
-  float: left;
-  height: $headerHeight;
-  width: 90px;
-  display: block;
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-
-  li {
-    display: block;
-    line-height: $headerHeight - 20px;
-    height: $headerHeight - 20px;
-    width: 30px;
-    text-align: center;
-    padding: 10px 0px;
-    margin: 0px;
-    float: right;
-  }
-}
-
-
-
 div.prompt {
   z-index: 300;
   display: block;
   position: absolute;
   margin: 0px;
   padding: 0px;
-  top: 45px;
+  top: 55px;
   left: 160px;
   background: transparent;
   width: $wordInputWidth + 10px;
+
+  &:hover {
+    display: block !important;
+  }
+
+  img.arrow {
+    position: absolute;
+    top: -7px;
+    left: $wordInputWidth + 10px - 40px;
+  }
 
   ul {
     width: $wordInputWidth - 6px;
@@ -318,6 +220,27 @@ div.prompt {
         background: transparent;
       }
     }
+  }
+}
+
+ul.change-locale {
+  float: left;
+  height: $headerHeight;
+  width: 90px;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+
+  li {
+    display: block;
+    line-height: $headerHeight - 20px;
+    height: $headerHeight - 20px;
+    width: 30px;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0px;
+    float: right;
   }
 }
 

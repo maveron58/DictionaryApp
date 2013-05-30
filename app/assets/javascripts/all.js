@@ -11,6 +11,11 @@ $(document).ready(function() {
         method: "POST",
         success: function(data) { 
           promptOpen($('div.prompt#word-input'), data);
+          promptClickPrepare();
+          $('div.prompt#word-input a').click(function (e) {
+            e.preventDefault();
+            $(this).closest('form').find('input#word').val($(this).text());
+          });
         }
       });
     } else {
@@ -29,16 +34,18 @@ $(document).ready(function() {
     obj.css('display','none');
   }
 
+  function promptClickPrepare() {
+    
+  }
+
   $('input#word').keyup(promptCreate);
   $('input#word').blur(function() { promptClose($('div.prompt#word-input')) });
   $('select#to').change(function() { promptClose($('div.prompt#word-input')) });
   $('select#from').change(function() { promptClose($('div.prompt#word-input')) });
 
-  $('.select-prompt a').click(function (e) {
+  $('div.prompt#word-input a').click(function (e) {
     e.preventDefault();
-    var par = $(this).closest('ul.select');
-    par.find('select').val($(this).attr('len-val'));
-    par.find('.title').text($(this).text());
+    alert('dupa');
   });
 
   $('.submit').click(function (e) {
