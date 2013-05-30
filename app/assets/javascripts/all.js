@@ -30,7 +30,6 @@ $(document).ready(function() {
   }
 
   $('input#word').keyup(promptCreate);
-  $('input#word').focus(function() { promptOpen($('div.prompt#word-input'), '') });
   $('input#word').blur(function() { promptClose($('div.prompt#word-input')) });
   $('select#to').change(function() { promptClose($('div.prompt#word-input')) });
   $('select#from').change(function() { promptClose($('div.prompt#word-input')) });

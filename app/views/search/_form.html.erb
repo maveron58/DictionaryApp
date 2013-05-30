@@ -13,6 +13,7 @@
           <li><a len-val="<%= l.id %>"><%= l.name.upcase %></a></li>
         <% end %>
       </ul>
+      <%= hidden_field_tag(:from, params[:from]) %>
       <% if params[:from] %>
         <%= select_tag(:from, options_from_collection_for_select(Language.where(:from => true), :id, :name, params[:from])) %>
       <% else %>
@@ -45,6 +46,7 @@
 
 
   <%= text_field_tag(:word, nil, :autocomplete => 'off') %>
+  <div class="prompt" id="word-input"></div>
 
   <a class="submit"><%= t("search") %></a>
 <% end %>
