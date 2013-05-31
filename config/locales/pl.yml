@@ -40,5 +40,5 @@ pl:
             file:
               invalid:
                 filetype: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv')."
-                filesize: "Plik musi być mniejszy niż 1Mb."
+                filesize: "Plik musi być mniejszy niż 1MB."
               blank: "Musisz wybrać plik."

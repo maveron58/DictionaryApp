@@ -40,5 +40,5 @@ en:
             file:
               invalid:
                 filetype: "Invalid file type (allowed are 'yml' and 'csv')."
-                filesize: "File must be smaller than 1Mb."
+                filesize: "File must be smaller than 1MB."
               blank: "You must choose file."

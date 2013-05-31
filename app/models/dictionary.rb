@@ -1,3 +1,5 @@
+require 'csv'
+
 class Dictionary
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -36,7 +38,16 @@ class Dictionary
         Word.create(:word => word, :definition => definition, :from => from, :to => to)
       end
     else
-
+      first = true;
+      CSV.foreach(file.tempfile) do |row|
+        if first
+          from = Language.find(row[0])
+          to   = Language.find(row[1])
+          first = false
+        else
+          Word.create(:word => row[0], :definition => row[1], :from => from, :to => to)
+        end
+      end
     end
   end
 end
