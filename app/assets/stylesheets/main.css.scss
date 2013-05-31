@@ -103,18 +103,20 @@ form.word-input {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     background: white;
-    text-transform: uppercase;
 
     select {
       display: block;
       float: left;
       width: $selectWidth + 20px;
+      height: 20px;
+      line-height: 20px;
       text-align: left;
       border: 0px;
       padding: 0px;
       margin: 0px;
       background: transparent;
       color: $textColor;
+    text-transform: uppercase;
     }
   }
 
@@ -161,7 +163,7 @@ form.word-input {
     float: left;
     width: 40px;
     height: 18px;
-    padding: 6px 0px;
+    padding: 2px 0px 10px 0px;
     margin: 0px 5px 0px -5px;
   }
 }

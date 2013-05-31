@@ -24,3 +24,9 @@ en:
   search: "Search"
   no_result: "No results."
   result_message: "You were looking for word '%{word}' in %{from}-%{to} dictionary."
+  welcome_message1: "Welcome to Online Dictionary!"
+  welcome_message2: "Now in database we have the following dictionaries:"
+
+  upload_title: "upload info"
+  upload_file_label: "file label"
+  upload_info: "information about file format and upload"

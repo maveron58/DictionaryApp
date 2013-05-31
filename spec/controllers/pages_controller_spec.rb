@@ -9,6 +9,11 @@ describe PagesController do
       response.should be_success
     end
 
+    it "returns http success" do
+      get 'dictionary_upload'
+      response.should be_success
+    end
+
     it "should have the right title (in pl)" do
       get 'index'
       assert_select "title", "Słownik Online - Piotr Heilman"

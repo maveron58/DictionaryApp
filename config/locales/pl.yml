@@ -24,3 +24,20 @@ pl:
   search: "Szukaj"
   no_result: "Brak wynikow."
   result_message: "Szukałeś słowa '%{word}' w słowniku %{from}-%{to}."
+  welcome_message1: "Witamy w Słowniku Online!"
+  welcome_message2: "Aktualnie w bazie danych posiadamy następujące słowniki:"
+
+  upload_title: "upload tytul"
+  upload_file_label: "plik label"
+  upload_info: "informacje na temat formatu i uploadu plików"
+
+  activemodel:
+    errors:
+      models:
+        dictionary:
+          attributes:
+            file:
+              invalid: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv'."
+              blank: "pusto"
+            name:
+              invalid: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv'."

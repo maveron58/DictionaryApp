@@ -1,0 +1,14 @@
+<%= form_tag({ :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :class => 'word-input', :multipart => true) do %>
+  <%= file_field_tag :file %>
+  <a class="submit"><%= t("search") %></a>
+<% end %>
+
+<%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true do |f| %>
+  <%= f.file_field :file %>
+<% end %>
+
+<%= @dict.valid? %>
+
+<% @dict.errors.full_messages.each do |e| %>
+  <%= e %>
+<% end %>

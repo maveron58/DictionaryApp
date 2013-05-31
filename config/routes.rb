@@ -3,6 +3,8 @@ DictApp::Application.routes.draw do
     root :to => "pages#index"
     get "search" => "search#index"
     post "search/list" => "search#list"
+    get "upload/dictionary" => "pages#dictionary_upload"
+    post "upload/dictionary" => "pages#dictionary_upload"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
