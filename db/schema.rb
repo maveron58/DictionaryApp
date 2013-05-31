@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20130527103415) do
     t.boolean "to",   default: false, null: false
   end
 
+  add_index "languages", ["name"], name: "index_languages_on_name", unique: true, using: :btree
+
   create_table "words", force: true do |t|
     t.string  "word",       null: false
     t.text    "definition", null: false

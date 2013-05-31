@@ -5,5 +5,7 @@ class CreateLanguages < ActiveRecord::Migration
       t.boolean :from, :null => false, :default => false
       t.boolean :to, :null => false, :default => false
     end
+
+    add_index(:languages, :name, :unique => true)
   end
 end
