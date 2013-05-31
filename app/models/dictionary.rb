@@ -2,12 +2,13 @@ class Dictionary
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
+  include ActiveModel::Model
 
-  attr_accessor :file, :name
+  attr_accessor :file
   attr_reader   :errors
 
-  validates :name, presence: true, format: { with: %r{\.(yml|csv)$\z}i }
   validates :file, presence: true
+  validate :filetype
   validate :filesize
 
 
@@ -19,6 +20,19 @@ class Dictionary
   end
 
   def filesize
-    errors[:file] << I18n.t("filesize.validation.error") if file && 1000.kilobytes < file.size
+    errors.add :file, I18n.t("filesize.validation.error") if file && 1000.kilobytes < file.size
+  end
+
+  def filetype
+    errors.add :file, I18n.t("filetype.validation.error") if file && !(file.original_filename =~ %r{.\.yml$}i)
+  end
+
+  def execute
+    data = YAML.load_file(file.tempfile)
+    from = Language.find(data["Dictionary"]["from"]);
+    to   = Language.find(data["Dictionary"]["to"]);
+    data["Words"].each do |word, definition|
+      Word.create(:word => word, :definition => definition, :from => from, :to => to)
+    end
   end
 end

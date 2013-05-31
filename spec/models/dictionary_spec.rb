@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Dictionary do
-  before { @dict = Dictionary.new(:name => "aaa.yml", :file => "sljfldsjflkjdsflkjsdfl") }
+  before { @dict = Dictionary.new(:file => "sljfldsjflkjdsflkjsdfl") }
 
   subject { @dict }
 
@@ -15,33 +15,28 @@ describe Dictionary do
     it { should_not be_valid }
   end
 
-  describe "when name is not present" do
-    before { @dict.name = "" }
+  describe "when file type is not allowed" do
+    before { @dict.file = "aaa.img" }
     it { should_not be_valid }
   end
 
   describe "when file type is not allowed" do
-    before { @dict.name = "aaa.img" }
+    before { @dict.file = "aaa.gif" }
     it { should_not be_valid }
   end
 
   describe "when file type is not allowed" do
-    before { @dict.name = "aaa.gif" }
-    it { should_not be_valid }
-  end
-
-  describe "when file type is not allowed" do
-    before { @dict.name = "aaa.csvcsv" }
+    before { @dict.file = "aaa.csvcsv" }
     it { should_not be_valid }
   end
 
   describe "when file type is allowed" do
-    before { @dict.name = "aaa.csv" }
+    before { @dict.file = "aaa.csv" }
     it { should be_valid }
   end
 
   describe "when file type is allowed" do
-    before { @dict.name = "aaa.yml" }
+    before { @dict.file = "aaa.yml" }
     it { should be_valid }
   end
 end

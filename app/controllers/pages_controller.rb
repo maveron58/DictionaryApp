@@ -5,10 +5,14 @@ class PagesController < ApplicationController
 
   def dictionary_upload
     @file = params[:file]
-    if params[:file]
-      @dict = Dictionary.new(:file => params[:file].tempfile, :name => params[:file].original_filename)
+    if params[:dictionary]
+      @dict = Dictionary.new(params[:dictionary])
     else
       @dict = Dictionary.new()
+    end
+
+    if @dict.valid?
+      @dict.execute
     end
   end
 end

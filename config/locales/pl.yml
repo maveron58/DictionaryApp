@@ -27,6 +27,7 @@ pl:
   welcome_message1: "Witamy w Słowniku Online!"
   welcome_message2: "Aktualnie w bazie danych posiadamy następujące słowniki:"
 
+  upload: "Wyślij"
   upload_title: "upload tytul"
   upload_file_label: "plik label"
   upload_info: "informacje na temat formatu i uploadu plików"
