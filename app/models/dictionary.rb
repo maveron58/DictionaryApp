@@ -20,11 +20,11 @@ class Dictionary
   end
 
   def filesize
-    errors.add :file, I18n.t("filesize.validation.error") if file && 1000.kilobytes < file.size
+    errors.add :file, I18n.t("activemodel.errors.models.dictionary.attributes.file.invalid.filesize") if file && 1000.kilobytes < file.size
   end
 
   def filetype
-    errors.add :file, I18n.t("filetype.validation.error") if file && !(file.original_filename =~ %r{.\.((yml)|(csv))$}i)
+    errors.add :file, I18n.t("activemodel.errors.models.dictionary.attributes.file.invalid.filetype") if file && !(file.original_filename =~ %r{.\.((yml)|(csv))$}i)
   end
 
   def execute

@@ -31,3 +31,14 @@ en:
   upload_title: "upload info"
   upload_file_label: "file label"
   upload_info: "information about file format and upload"
+
+  activemodel:
+    errors:
+      models:
+        dictionary:
+          attributes:
+            file:
+              invalid:
+                filetype: "Invalid file type (allowed are 'yml' and 'csv')."
+                filesize: "File must be smaller than 1Mb."
+              blank: "You must choose file."
