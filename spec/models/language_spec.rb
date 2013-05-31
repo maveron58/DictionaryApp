@@ -3,7 +3,9 @@
 # Table name: languages
 #
 #  id   :integer          not null, primary key
-#  name :string(255)
+#  name :string(255)      not null
+#  from :boolean          default(FALSE), not null
+#  to   :boolean          default(FALSE), not null
 #
 
 require 'spec_helper'

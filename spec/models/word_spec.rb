@@ -3,10 +3,10 @@
 # Table name: words
 #
 #  id         :integer          not null, primary key
-#  word       :string(255)
-#  definition :string(255)
-#  from_id    :integer
-#  to_id      :integer
+#  word       :string(255)      not null
+#  definition :text             not null
+#  from_id    :integer          not null
+#  to_id      :integer          not null
 #
 
 require 'spec_helper'
