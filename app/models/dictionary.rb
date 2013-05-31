@@ -24,15 +24,19 @@ class Dictionary
   end
 
   def filetype
-    errors.add :file, I18n.t("filetype.validation.error") if file && !(file.original_filename =~ %r{.\.yml$}i)
+    errors.add :file, I18n.t("filetype.validation.error") if file && !(file.original_filename =~ %r{.\.((yml)|(csv))$}i)
   end
 
   def execute
-    data = YAML.load_file(file.tempfile)
-    from = Language.find(data["Dictionary"]["from"]);
-    to   = Language.find(data["Dictionary"]["to"]);
-    data["Words"].each do |word, definition|
-      Word.create(:word => word, :definition => definition, :from => from, :to => to)
+    if file.original_filename =~ %r{.\.yml$}i
+      data = YAML.load_file(file.tempfile)
+      from = Language.find(data["Dictionary"]["from"]);
+      to   = Language.find(data["Dictionary"]["to"]);
+      data["Words"].each do |word, definition|
+        Word.create(:word => word, :definition => definition, :from => from, :to => to)
+      end
+    else
+
     end
   end
 end

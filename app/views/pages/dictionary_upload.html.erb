@@ -3,8 +3,6 @@
   <%= f.submit t("upload") %>
 <% end %>
 
-<%= @dict.valid? %>
-
-<% @dict.errors.full_messages.each do |e| %>
-  <%= e %>
+<% @dict.errors.messages[:file].each do |msg| %>
+  <%= msg %>
 <% end %>

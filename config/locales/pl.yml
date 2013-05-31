@@ -38,7 +38,5 @@ pl:
         dictionary:
           attributes:
             file:
-              invalid: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv'."
+              invalid: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv')."
               blank: "pusto"
-            name:
-              invalid: "Niewłaściwy format pliku (dozwolone są tylko pliki 'yml' i 'csv'."
