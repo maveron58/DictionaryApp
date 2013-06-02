@@ -27,11 +27,11 @@ $(document).ready(function() {
     if(data.length > 0) {
       obj.html(data);
     }
-    obj.css('display','block');
+    obj.css('opacity','1');
   }
 
   function promptClose(obj) {
-    obj.css('display','none');
+    obj.css('opacity','0');
   }
 
   function promptClickPrepare() {

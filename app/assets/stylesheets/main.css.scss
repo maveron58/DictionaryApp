@@ -43,8 +43,6 @@ body {
     style: normal;
   }
   color: $textColor;
-  margin: 0px;
-  padding: 0px;
 }
 
 div.header {
@@ -55,8 +53,6 @@ div.header {
   width: 100%;
   height: $headerHeight;
   background: $lines;
-  margin: 0px;
-  padding: 0px;
 
   div.inside {
     width: 1000px;
@@ -72,8 +68,6 @@ div.header {
       width: 400px;
       font-size: 30px;
       font-weight: bold;
-      margin: 0px;
-      padding: 0px;
       margin-right: 20px;
     }
 
@@ -88,7 +82,6 @@ form.word-input {
   width: 490px;
   float: left;
   padding: 15px 0px;
-  margin: 0px;
   position: relative;
 
   div.select {
@@ -96,7 +89,7 @@ form.word-input {
     overflow: hidden;
     height: 20px;
     padding: 5px;
-    margin: 0px 10px 0px 0px;
+    margin-right: 10px;
     float: left;
     border: 0px;
     border-radius: 5px;
@@ -112,11 +105,9 @@ form.word-input {
       line-height: 20px;
       text-align: left;
       border: 0px;
-      padding: 0px;
-      margin: 0px;
       background: transparent;
       color: $textColor;
-    text-transform: uppercase;
+      text-transform: uppercase;
     }
   }
 
@@ -126,7 +117,7 @@ form.word-input {
     width: $wordInputWidth;
     height: 20px;
     padding: 5px;
-    margin: 0px 10px 0px 0px;
+    margin-right: 10px;
     border: 0px;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -142,7 +133,6 @@ form.word-input {
     line-height: 20px;
     text-align: center;
     padding: 5px;
-    margin: 0px;
     border: 0px;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -163,24 +153,26 @@ form.word-input {
     float: left;
     width: 40px;
     height: 18px;
-    padding: 2px 0px 10px 0px;
-    margin: 0px 5px 0px -5px;
+    padding-top: 2px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    margin-left: -5px;
   }
 }
 
 div.prompt {
   z-index: 300;
   display: block;
+  opacity: 0;
   position: absolute;
-  margin: 0px;
-  padding: 0px;
   top: 55px;
   left: 160px;
   background: transparent;
   width: $wordInputWidth + 10px;
+  transition: all 0.3s linear 0s;
 
   &:hover {
-    display: block !important;
+    opacity: 1;
   }
 
   img.arrow {
@@ -197,7 +189,6 @@ div.prompt {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    margin: 0px;
     padding: 5px;
 
     li {
@@ -205,8 +196,6 @@ div.prompt {
       height: 20px;
       line-height: 20px;
       display: block;
-      margin: 0px;
-      padding: 0px;
       overflow: hidden;
 
       a {
@@ -215,8 +204,6 @@ div.prompt {
         height: 20px;
         line-height: 20px;
         display: block;
-        margin: 0px;
-        padding: 0px;
         color: $textColor !important;
         cursor: pointer;
         background: transparent;
@@ -230,8 +217,6 @@ ul.change-locale {
   height: $headerHeight;
   width: 90px;
   display: block;
-  margin: 0px;
-  padding: 0px;
   list-style: none;
 
   li {
@@ -241,16 +226,38 @@ ul.change-locale {
     width: 30px;
     text-align: center;
     padding: 10px 0px;
-    margin: 0px;
     float: right;
+
+    a {
+      display: block;
+      height: $headerHeight - 20px;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 div.content {
   z-index: 1;
-  margin: 60px auto 60px auto;
-  padding: 10px 0px 10px 0px;
+  margin: $headerHeight auto 40px auto;
+  padding: 10px 0px;
   width: 1000px;
+
+  h2 {
+    font-size: 21px;
+    padding: 10px 0px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 17px;
+    padding: 10px 0px;
+    font-weight: bold;
+  }
 }
 
 div.footer {
@@ -261,17 +268,29 @@ div.footer {
   width: 100%;
   height: 40px;
   background: $lines;
-  margin: 0px;
-  padding: 0px;
 
   div.inside {
     width: 1000px;
     margin: 0px auto;
-    padding: 0px;
   }
 
   p {
     color: white;
-    text-align: center;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+
+    a {
+      display: block;
+      height: 40px;
+      float: right;
+      color: white;
+      margin-left: 10px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
