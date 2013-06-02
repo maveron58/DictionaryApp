@@ -4,7 +4,7 @@ Then create database (rake db:create) and migrate (rake db:migrate).
 
 In main folder are included example dictionary files to upload (eng-pl.yml, eng-pl.csv, pl-by.yml, pl-by.csv).
 
-To use dictionary you need to upload them using online form.
+To use dictionaries you need to upload them using online form.
 
 Structure of YML files:
 
