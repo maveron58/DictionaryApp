@@ -43,11 +43,6 @@ $(document).ready(function() {
   $('select#to').change(function() { promptClose($('div.prompt#word-input')) });
   $('select#from').change(function() { promptClose($('div.prompt#word-input')) });
 
-  $('div.prompt#word-input a').click(function (e) {
-    e.preventDefault();
-    alert('dupa');
-  });
-
   $('.submit').click(function (e) {
     e.preventDefault();
     $(this).closest('form').submit();

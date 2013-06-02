@@ -21,7 +21,7 @@
   <%= text_field_tag(:word, nil, :autocomplete => 'off') %>
   <div class="prompt" id="word-input"></div>
 
-  <a class="submit" id="dupa"><%= t("search") %></a>
+  <a class="submit"><%= t("search") %></a>
   <% if ENV['RAILS_ENV'] == "test" %>
     <%= submit_tag 'submit' %>
   <% end %>
