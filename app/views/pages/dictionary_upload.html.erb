@@ -1,5 +1,6 @@
-<%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true do |f| %>
-  <%= f.file_field :file %>
+<%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true, :html => { :class => "file-upload" } do |f| %>
+  <div class="fake-text-input-file"><%= f.file_field :file, :size => 100 %><p class="text"><%= t("upload.choose") %></p></div>
+  <a class="fake-button-file"><%= t("upload.look") %></a>
   <%= f.submit t("upload.text") %>
 <% end %>
 

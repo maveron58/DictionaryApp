@@ -34,6 +34,8 @@ en:
     info: "information about file format and upload"
     done: "Dictionary was added."
     link: "Upload dictionary"
+    look: "Browse..."
+    choose: "Choose file"
 
   download:
     title: "Dictionary list for download:"

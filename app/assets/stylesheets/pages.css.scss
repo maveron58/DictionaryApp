@@ -4,6 +4,32 @@
 
 $linkColor: #2c3e50;
 $linkColorHover: #415b76;
+$buttons: #1abc9c;
+$buttonsHover: #48c9b0;
+
+@keyframes buttonIn
+{
+0%   { background: $buttons; }
+100% { background: $buttonsHover; }
+}
+
+@-webkit-keyframes buttonIn
+{
+0%   { background: $buttons; }
+100% { background: $buttonsHover; }
+}
+
+@keyframes buttonOut
+{
+0%   { background: $buttonsHover; }
+100% { background: $buttons; }
+}
+
+@-webkit-keyframes buttonOut
+{
+0%   { background: $buttonsHover; }
+100% { background: $buttons; }
+}
 
 ul.dictionary-list {
   margin: 20px 30px;
@@ -37,5 +63,63 @@ ul.download-list {
 
   li.title {
     margin-left: -30px;
+  }
+}
+
+form.file-upload {
+
+  div.fake-text-input-file {
+    background: white;
+    height: 30px - 4px;
+    width: 250px;
+    padding: 0px 5px;
+    margin-right: 10px;
+    border: 2px solid $buttons;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: white;
+    float: left;
+    overflow: hidden;
+    position: relative;
+
+    input[type=file] {
+      position: absolute;
+      opacity: 0;
+      top: -5px;
+      left: -5px;
+      font-size: 20px;
+    }
+
+    p.text {
+      line-height: 30px - 4px;
+      height: 30px - 4px;
+      overflow: hidden;
+      width: 1000px;
+    }
+  }
+
+  a.fake-button-file {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: $buttons;
+    color: white;
+    animation: buttonOut 0.5s;
+    -webkit-animation: buttonOut 0.5s;
+    cursor: pointer;
+    &:hover {
+      animation: buttonIn 0.5s;
+      -webkit-animation: buttonIn 0.5s;
+      background: $buttonsHover;
+    }
   }
 }

@@ -34,6 +34,8 @@ pl:
     info: "informacje na temat formatu i uploadu plików"
     done: "Słownik został dodany."
     link: "Załaduj słownik"
+    look: "Przeglądaj..."
+    choose: "Wybierz plik"
 
   download:
     title: "Lista słowników do pobrania:"

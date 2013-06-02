@@ -52,4 +52,13 @@ $(document).ready(function() {
     e.preventDefault();
     $(this).parent('form').submit();
   });
+
+  $('.fake-button-file').click(function (e) {
+    e.preventDefault();
+    $(this).closest('form').find('input[type=file]').click();
+  });
+
+  $('input[type=file]').change(function () {
+    $(this).closest('.fake-text-input-file').find('p.text').html($(this)[0].files[0].name);
+  });
 });
