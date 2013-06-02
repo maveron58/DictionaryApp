@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$linkColor: #2c3e50;
+$linkColorHover: #415b76;
+
 ul.dictionary-list {
   margin: 20px 30px;
 
@@ -9,5 +12,30 @@ ul.dictionary-list {
     text-transform: uppercase;
     font-size: 16px;
     padding: 3px 0px;
+  }
+}
+
+ul.download-list {
+  margin: 10px 30px;
+  display: block;
+  width: 400px;
+  float: left;
+  li {
+    a {
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $linkColor;
+
+      &:hover {
+        text-decoration: underline;
+        color: $linkColorHover;
+      }
+    }
+  }
+
+  li.title {
+    margin-left: -30px;
   }
 }
