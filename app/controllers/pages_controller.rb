@@ -58,14 +58,16 @@ class PagesController < ApplicationController
     langs = Language.all
     data = Array.new()
 
-    langs.each do |from|
-      next if !from.from
-      langs.each do |to|
-        next if !to.to
+    if langs
+      langs.each do |from|
+        next if !from.from
+        langs.each do |to|
+          next if !to.to
 
-        exist = Word.find_by_from_id_and_to_id(from.id, to.id)
-        if exist
-          data.push({:from => from, :to => to})
+          exist = Word.find_by_from_id_and_to_id(from.id, to.id)
+          if exist
+            data.push({:from => from, :to => to})
+          end
         end
       end
     end

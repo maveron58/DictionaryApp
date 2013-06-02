@@ -4,8 +4,10 @@
 <h3>
   <%= t("welcome_message2") %>
 </h3>
-<ul class="dictionary-list">
-  <% @dict.each do |d| %>
-    <li><%= d[:from].name + " -> " + d[:to].name %></li>
-  <% end %>
-</ul>
+<% if @dict %>
+  <ul class="dictionary-list">
+    <% @dict.each do |d| %>
+      <li><%= d[:from].name + " -> " + d[:to].name %></li>
+    <% end %>
+  </ul>
+<% end %>

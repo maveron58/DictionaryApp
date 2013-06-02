@@ -13,5 +13,12 @@
       <% end %>
     </div>
     <a class="submit"><%= t("upload.submit") %></a>
+    <% if ENV['RAILS_ENV'] == "test" %>
+      <%= submit_tag 'submit' %>
+    <% end %>
   </div>
+<% end %>
+
+<% if @mess %>
+  <h3><%= @mess %></h3>
 <% end %>
