@@ -5,6 +5,8 @@ DictApp::Application.routes.draw do
     post "search/list" => "search#list"
     get "upload/dictionary" => "pages#dictionary_upload"
     post "upload/dictionary" => "pages#dictionary_upload"
+    get "download/dictionary/:from/:to/:type" => "pages#dictionary_download", :type => %r{(yml)|(csv)}
+    get "download/dictionary" => "pages#dictionary_download_list"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,19 @@
+<h3><%= t("download.title") %></h3>
+
+<h3><%= t("download.yml_format") %></h3>
+<ul>
+<% @data.each do |dict| %>
+  <li>
+  <%= link_to dict[:from].name + " -> " + dict[:to].name, url_for(:controller => 'pages', :action => 'dictionary_download', :from => dict[:from].name, :to => dict[:to].name, :type => 'yml') %>
+  </li>
+<% end %>
+</ul>
+
+<h3><%= t("download.csv_format") %></h3>
+<ul>
+<% @data.each do |dict| %>
+  <li>
+    <%= link_to dict[:from].name + " -> " + dict[:to].name, url_for(:controller => 'pages', :action => 'dictionary_download', :from => dict[:from].name, :to => dict[:to].name, :type => 'csv') %>
+  </li>
+<% end %>
+</ul>

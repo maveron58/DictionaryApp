@@ -27,10 +27,19 @@ pl:
   welcome_message1: "Witamy w Słowniku Online!"
   welcome_message2: "Aktualnie w bazie danych posiadamy następujące słowniki:"
 
-  upload: "Wyślij"
-  upload_title: "upload tytul"
-  upload_file_label: "plik label"
-  upload_info: "informacje na temat formatu i uploadu plików"
+  upload:
+    text: "Wyślij"
+    title: "upload tytul"
+    file_label: "plik label"
+    info: "informacje na temat formatu i uploadu plików"
+    done: "Słownik został dodany."
+    link: "Załaduj słownik"
+
+  download:
+    title: "Lista słowników do pobrania:"
+    link: "Pobierz słownik"
+    yml_format: "Format YML:"
+    csv_format: "Format CSV:"
 
   activemodel:
     errors:

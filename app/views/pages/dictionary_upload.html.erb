@@ -1,6 +1,6 @@
 <%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true do |f| %>
   <%= f.file_field :file %>
-  <%= f.submit t("upload") %>
+  <%= f.submit t("upload.text") %>
 <% end %>
 
 <% @dict.errors.messages[:file].each do |msg| %>

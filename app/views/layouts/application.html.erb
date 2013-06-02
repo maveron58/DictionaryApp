@@ -19,7 +19,11 @@
   </div>
   <div class="footer">
     <div class="inside">
-      <p>&copy; Piotr Heilman 2013</p>
+      <p>
+        <span>&copy; Piotr Heilman 2013</span>
+        <%= link_to t("upload.link"), :controller => 'pages', :action => 'dictionary_upload' %>
+        <%= link_to t("download.link"), :controller => 'pages', :action => 'dictionary_download_list' %>
+      </p>
     </div>
   </div>
 </body>
