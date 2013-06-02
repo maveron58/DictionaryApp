@@ -125,29 +125,6 @@ form.word-input {
     background: white;
   }
 
-  a.submit {
-    display: block;
-    float: left;
-    width: 100px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 5px;
-    border: 0px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    background: $buttons;
-    animation: buttonOut 0.5s;
-    -webkit-animation: buttonOut 0.5s;
-    cursor: pointer;
-    &:hover {
-      animation: buttonIn 0.5s;
-      -webkit-animation: buttonIn 0.5s;
-      background: $buttonsHover;
-    }
-  }
-
   img.lang-arrow {
     display: block;
     float: left;
@@ -157,6 +134,30 @@ form.word-input {
     padding-bottom: 10px;
     margin-right: 5px;
     margin-left: -5px;
+  }
+}
+
+a.fake-button-file, a.submit {
+  display: block;
+  float: left;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding: 5px;
+  border: 0px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: $buttons;
+  color: white;
+  animation: buttonOut 0.5s;
+  -webkit-animation: buttonOut 0.5s;
+  cursor: pointer;
+  &:hover {
+    animation: buttonIn 0.5s;
+    -webkit-animation: buttonIn 0.5s;
+    background: $buttonsHover;
   }
 }
 
