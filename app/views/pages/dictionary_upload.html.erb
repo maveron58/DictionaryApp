@@ -1,4 +1,5 @@
 <h3><%= t("upload.title") %></h3>
+<p class="info"><%= t("upload.info") %></h3>
 
 <%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true, :html => { :class => "file-upload" } do |f| %>
   <div class="line">

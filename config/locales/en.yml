@@ -27,11 +27,13 @@ en:
   welcome_message1: "Welcome to Online Dictionary!"
   welcome_message2: "Now in database we have the following dictionaries:"
 
+  dictionary:
+    not_found: "Dictionary wasn't found in database."
+
   upload:
     submit: "Upload"
     title: "Upload your dictionary to database."
-    file_label: "file label"
-    info: "information about file format and upload"
+    info: "File must be an YML or CSV file and be smaller than 1MB."
     done: "Dictionary was added."
     link: "Upload dictionary"
     look: "Browse..."

@@ -27,11 +27,13 @@ pl:
   welcome_message1: "Witamy w Słowniku Online!"
   welcome_message2: "Aktualnie w bazie danych posiadamy następujące słowniki:"
 
+  dictionary:
+    not_found: "Słownik nie został znaleziony w bazie danych."
+
   upload:
     submit: "Wyślij"
     title: "Załaduj swój słownik do bazy danych."
-    file_label: "plik label"
-    info: "informacje na temat formatu i uploadu plików"
+    info: "Plik musi być typu YML lub CSV oraz musi być mniejszy niż 1MB."
     done: "Słownik został dodany."
     link: "Załaduj słownik"
     look: "Przeglądaj..."
