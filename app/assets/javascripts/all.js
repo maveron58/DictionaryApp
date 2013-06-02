@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   $('.submit').click(function (e) {
     e.preventDefault();
-    $(this).parent('form').submit();
+    $(this).closest('form').submit();
   });
 
   $('.fake-button-file').click(function (e) {
