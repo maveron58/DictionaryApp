@@ -28,8 +28,8 @@ en:
   welcome_message2: "Now in database we have the following dictionaries:"
 
   upload:
-    text: "Upload"
-    title: "upload info"
+    submit: "Upload"
+    title: "Upload your dictionary to database."
     file_label: "file label"
     info: "information about file format and upload"
     done: "Dictionary was added."

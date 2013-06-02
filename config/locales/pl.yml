@@ -28,8 +28,8 @@ pl:
   welcome_message2: "Aktualnie w bazie danych posiadamy następujące słowniki:"
 
   upload:
-    text: "Wyślij"
-    title: "upload tytul"
+    submit: "Wyślij"
+    title: "Załaduj swój słownik do bazy danych."
     file_label: "plik label"
     info: "informacje na temat formatu i uploadu plików"
     done: "Słownik został dodany."

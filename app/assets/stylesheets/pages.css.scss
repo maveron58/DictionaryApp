@@ -6,6 +6,7 @@ $linkColor: #2c3e50;
 $linkColorHover: #415b76;
 $buttons: #1abc9c;
 $buttonsHover: #48c9b0;
+$fileInputWidth: 350px;
 
 @keyframes buttonIn
 {
@@ -67,11 +68,17 @@ ul.download-list {
 }
 
 form.file-upload {
+  margin-top: 20px;
+
+  div.line {
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
 
   div.fake-text-input-file {
     background: white;
     height: 30px - 4px;
-    width: 250px;
+    width: $fileInputWidth;
     padding: 0px 5px;
     margin-right: 10px;
     border: 2px solid $buttons;
@@ -99,7 +106,7 @@ form.file-upload {
     }
   }
 
-  a.fake-button-file {
+  a.fake-button-file, a.submit {
     display: block;
     float: left;
     width: 100px;
@@ -121,5 +128,13 @@ form.file-upload {
       -webkit-animation: buttonIn 0.5s;
       background: $buttonsHover;
     }
+  }
+
+  div.left {
+    height: 30px;
+    width: $fileInputWidth + 4px;
+    padding: 0px 5px;
+    margin-right: 10px;
+    float: left;
   }
 }

@@ -1,9 +1,16 @@
-<%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true, :html => { :class => "file-upload" } do |f| %>
-  <div class="fake-text-input-file"><%= f.file_field :file, :size => 100 %><p class="text"><%= t("upload.choose") %></p></div>
-  <a class="fake-button-file"><%= t("upload.look") %></a>
-  <%= f.submit t("upload.text") %>
-<% end %>
+<h3><%= t("upload.title") %></h3>
 
-<% @dict.errors.messages[:file].each do |msg| %>
-  <%= msg %>
+<%= form_for @dict, :url => { :controller => 'pages', :action => 'dictionary_upload' }, :method => "post", :multipart => true, :html => { :class => "file-upload" } do |f| %>
+  <div class="line">
+    <div class="fake-text-input-file"><%= f.file_field :file, :size => 100 %><p class="text"><%= t("upload.choose") %></p></div>
+    <a class="fake-button-file"><%= t("upload.look") %></a>
+  </div>
+  <div class="line">
+    <div class="left">
+      <% @dict.errors.messages[:file].each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </div>
+    <a class="submit"><%= t("upload.submit") %></a>
+  </div>
 <% end %>
