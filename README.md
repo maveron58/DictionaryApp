@@ -8,17 +8,17 @@ To use dictionary you need to upload them using online form.
 
 Structure of YML files:
 
-  Dictionary:
-    from: lang_code
-    to:   lang_code
-  Words:
-    word1: definition1
-    word2: definition2
-    ...
+    Dictionary:
+        from: lang_code
+        to:   lang_code
+    Words:
+        word1: definition1
+        word2: definition2
+        ...
 
 Structure of CSV files:
 
-  lang_from_code, lang_to_code
-  word1, definition1
-  word2, definition2
-  ...
+    lang_from_code, lang_to_code
+    word1, definition1
+    word2, definition2
+    ...
