@@ -31,51 +31,59 @@ class Dictionary
 
   def execute
     if file.original_filename =~ %r{.\.yml$}i
-      data = YAML.load_file(file.tempfile)
-
-      from = Language.find_by_name(data["Dictionary"]["from"])
-      if !from
-        Language.create(:name => data["Dictionary"]["from"])
-        from = Language.find_by_name(data["Dictionary"]["from"])
-      end
-      from.from = true;
-      from.save
-
-      to = Language.find_by_name(data["Dictionary"]["to"])
-      if !to
-        Language.create(:name => data["Dictionary"]["to"])
-        to = Language.find_by_name(data["Dictionary"]["to"])
-      end
-      to.to = true;
-      to.save
-
-      data["Words"].each do |word, definition|
-        Word.create(:word => word, :definition => definition, :from => from, :to => to)
-      end
+      executeFromYml()
     else
-      first = true;
-      CSV.foreach(file.tempfile) do |row|
-        if first
+      executeFromCsv()
+    end
+  end
+
+  def executeFromYml
+    data = YAML.load_file(file.tempfile)
+
+    from = Language.find_by_name(data["Dictionary"]["from"])
+    if !from
+      Language.create(:name => data["Dictionary"]["from"])
+      from = Language.find_by_name(data["Dictionary"]["from"])
+    end
+    from.from = true;
+    from.save
+
+    to = Language.find_by_name(data["Dictionary"]["to"])
+    if !to
+      Language.create(:name => data["Dictionary"]["to"])
+      to = Language.find_by_name(data["Dictionary"]["to"])
+    end
+    to.to = true;
+    to.save
+
+    data["Words"].each do |word, definition|
+      Word.create(:word => word, :definition => definition, :from => from, :to => to)
+    end
+  end
+
+  def executeFromCsv
+    first = true;
+    CSV.foreach(file.tempfile) do |row|
+      if first
+        from = Language.find_by_name(row[0])
+        if !from
+          Language.create(:name => row[0])
           from = Language.find_by_name(row[0])
-          if !from
-            Language.create(:name => row[0])
-            from = Language.find_by_name(row[0])
-          end
-          from.from = true;
-          from.save
-
-          to = Language.find_by_name(row[1])
-          if !to
-            Language.create(:name => row[1])
-            to = Language.find_by_name(row[1])
-          end
-          to.to = true;
-          to.save
-
-          first = false
-        else
-          Word.create(:word => row[0], :definition => row[1], :from => from, :to => to)
         end
+        from.from = true;
+        from.save
+
+        to = Language.find_by_name(row[1])
+        if !to
+          Language.create(:name => row[1])
+          to = Language.find_by_name(row[1])
+        end
+        to.to = true;
+        to.save
+
+        first = false
+      else
+        Word.create(:word => row[0], :definition => row[1], :from => from, :to => to)
       end
     end
   end
